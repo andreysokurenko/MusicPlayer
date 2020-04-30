@@ -40,9 +40,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     presenter.viewController  = viewController
     router.viewController     = viewController
   }
-  
-  // MARK: Routing
-  
+    
 
   
   // MARK: View lifecycle
@@ -53,7 +51,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     
     setupTableView()
     setupSearchBar()
-    searchBar(searchController.searchBar, textDidChange: "billie")
+  //  searchBar(searchController.searchBar, textDidChange: "billie")
   }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,7 +111,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = table.dequeueReusableCell(withIdentifier: TrackCell.reuseId, for: indexPath) as! TrackCell
         
         let cellViewModel = searchViewModel.cells[indexPath.row]
-//        print("cellViewModel.previewUrl:", cellViewModel.previewUrl)
         cell.trackImageView.backgroundColor = .red
         cell.set(viewModel: cellViewModel)
 
